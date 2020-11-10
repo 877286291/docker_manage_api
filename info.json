@@ -1,0 +1,140 @@
+{
+  "ID": "LSYD:2D2F:JNT6:N736:HOVA:EKKT:RYSA:RA7K:2BI7:5RPL:C4HF:6VXG",
+  "Containers": 0,
+  "ContainersRunning": 0,
+  "ContainersPaused": 0,
+  "ContainersStopped": 0,
+  "Images": 1,
+  "Driver": "overlay2",
+  "DriverStatus": [
+    [
+      "Backing Filesystem",
+      "extfs"
+    ],
+    [
+      "Supports d_type",
+      "true"
+    ],
+    [
+      "Native Overlay Diff",
+      "true"
+    ]
+  ],
+  "SystemStatus": null,
+  "Plugins": {
+    "Volume": [
+      "local"
+    ],
+    "Network": [
+      "bridge",
+      "host",
+      "ipvlan",
+      "macvlan",
+      "null",
+      "overlay"
+    ],
+    "Authorization": null
+  },
+  "MemoryLimit": true,
+  "SwapLimit": true,
+  "KernelMemory": true,
+  "CpuCfsPeriod": true,
+  "CpuCfsQuota": true,
+  "CPUShares": true,
+  "CPUSet": true,
+  "IPv4Forwarding": true,
+  "BridgeNfIptables": false,
+  "BridgeNfIp6tables": false,
+  "Debug": false,
+  "NFd": 37,
+  "OomKillDisable": true,
+  "NGoroutines": 42,
+  "SystemTime": "2020-11-10T01:49:33.042276Z",
+  "LoggingDriver": "json-file",
+  "CgroupDriver": "cgroupfs",
+  "NEventsListener": 2,
+  "KernelVersion": "4.19.128-microsoft-standard",
+  "OperatingSystem": "Docker Desktop",
+  "OSType": "linux",
+  "Architecture": "x86_64",
+  "IndexServerAddress": "https://index.docker.io/v1/",
+  "RegistryConfig": {
+    "InsecureRegistryCIDRs": [
+      "127.0.0.0/8"
+    ],
+    "IndexConfigs": {
+      "docker.io": {
+        "Name": "docker.io",
+        "Mirrors": [],
+        "Secure": true,
+        "Official": true
+      }
+    },
+    "Mirrors": []
+  },
+  "NCPU": 4,
+  "MemTotal": 9854533632,
+  "DockerRootDir": "/var/lib/docker",
+  "HttpProxy": "",
+  "HttpsProxy": "",
+  "NoProxy": "",
+  "Name": "docker-desktop",
+  "Labels": [],
+  "ExperimentalBuild": false,
+  "ServerVersion": "19.03.13",
+  "ClusterStore": "",
+  "ClusterAdvertise": "",
+  "Runtimes": {
+    "runc": {
+      "path": "runc"
+    }
+  },
+  "DefaultRuntime": "runc",
+  "Swarm": {
+    "NodeID": "",
+    "NodeAddr": "",
+    "LocalNodeState": "inactive",
+    "ControlAvailable": false,
+    "Error": "",
+    "RemoteManagers": null,
+    "Nodes": 0,
+    "Managers": 0,
+    "Cluster": {
+      "ID": "",
+      "Version": {},
+      "CreatedAt": "0001-01-01T00:00:00Z",
+      "UpdatedAt": "0001-01-01T00:00:00Z",
+      "Spec": {
+        "Orchestration": {},
+        "Raft": {
+          "ElectionTick": 0,
+          "HeartbeatTick": 0
+        },
+        "Dispatcher": {},
+        "CAConfig": {},
+        "TaskDefaults": {},
+        "EncryptionConfig": {
+          "AutoLockManagers": false
+        }
+      }
+    }
+  },
+  "LiveRestoreEnabled": false,
+  "Isolation": "",
+  "InitBinary": "docker-init",
+  "ContainerdCommit": {
+    "ID": "8fba4e9a7d01810a393d5d25a3621dc101981175",
+    "Expected": "8fba4e9a7d01810a393d5d25a3621dc101981175"
+  },
+  "RuncCommit": {
+    "ID": "dc9208a3303feef5b3839f4323d9beb36df0a9dd",
+    "Expected": "dc9208a3303feef5b3839f4323d9beb36df0a9dd"
+  },
+  "InitCommit": {
+    "ID": "fec3683",
+    "Expected": "fec3683"
+  },
+  "SecurityOptions": [
+    "name=seccomp,profile=default"
+  ]
+}
