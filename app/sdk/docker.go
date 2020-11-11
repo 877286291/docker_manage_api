@@ -9,11 +9,16 @@ import (
 
 var cxt context.Context
 
-func ConnInit(host, version string) (*client.Client, error) {
+func Ping(host string) {
+
+}
+
+func ConnInit(host string) (*client.Client, error) {
 	cxt = context.Background()
-	cli, err := client.NewClient(host, version, nil, nil)
+	cli, err := client.NewClient(host, "", nil, nil)
 	if err != nil {
-		panic(err)
+		// 连接失败
+		log.Println(err)
 	}
 	//defer cli.Close()
 	return cli, err

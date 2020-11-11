@@ -6,8 +6,12 @@ import (
 	"log"
 )
 
+func Ping(host string) {
+
+}
+
 func Info(host string) (types.Info, error) {
-	cli, err := sdk.ConnInit("tcp://"+host, "v1.40")
+	cli, err := sdk.ConnInit("tcp://" + host)
 	if err != nil {
 		log.Println(err)
 	}
@@ -19,7 +23,7 @@ func Info(host string) (types.Info, error) {
 }
 
 func ImageList(host string) ([]types.ImageSummary, error) {
-	cli, err := sdk.ConnInit("tcp://"+host, "v1.40")
+	cli, err := sdk.ConnInit("tcp://" + host)
 	if err != nil {
 		log.Println(err)
 	}
