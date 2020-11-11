@@ -8,19 +8,6 @@ import (
 	"time"
 )
 
-type Database struct {
-	Mongo *mongo.Client
-}
-
-var DB *Database
-
-//初始化
-func init() {
-	DB = &Database{
-		Mongo: SetConnect(),
-	}
-}
-
 // 连接设置
 func SetConnect() *mongo.Client {
 	uri := "mongodb://39.108.180.201:27017"

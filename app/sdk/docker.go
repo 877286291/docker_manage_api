@@ -9,13 +9,9 @@ import (
 
 var cxt context.Context
 
-func Ping(host string) {
-
-}
-
 func ConnInit(host string) (*client.Client, error) {
 	cxt = context.Background()
-	cli, err := client.NewClient(host, "", nil, nil)
+	cli, err := client.NewClient("tcp://"+host, "", nil, nil)
 	if err != nil {
 		// 连接失败
 		log.Println(err)
