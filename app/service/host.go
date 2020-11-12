@@ -5,9 +5,13 @@ import (
 	"github.com/docker/docker/api/types"
 )
 
-func AddHostToDB(info map[string]interface{}) {
+func AddHostToDB(info map[string]interface{}) (interface{}, error) {
 	mgo := mongo.NewMgo("docker_info", "endpoints")
-	mgo.InsertOne(info)
+	insertResult, err := mgo.InsertOne(info)
+	if err != nil {
+		return nil, err
+	}
+	return insertResult.InsertedID, nil
 }
 func DeleteHostFromDB(url string) {
 	mgo := mongo.NewMgo("docker_info", "endpoints")

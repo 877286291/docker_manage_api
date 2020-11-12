@@ -36,14 +36,14 @@ func (m *mgo) FindOne(key string, value interface{}) *mongo.SingleResult {
 }
 
 //插入单个
-func (m *mgo) InsertOne(value interface{}) *mongo.InsertOneResult {
+func (m *mgo) InsertOne(value interface{}) (*mongo.InsertOneResult, error) {
 	client := models.SetConnect()
 	collection := client.Database(m.database).Collection(m.collection)
-	insertResult, err := collection.InsertOne(context.Background(), value)
+	insertResult, err := collection.InsertOne(context.TODO(), value)
 	if err != nil {
-		log.Println(err)
+		return nil, err
 	}
-	return insertResult
+	return insertResult, nil
 }
 
 //更新单个
