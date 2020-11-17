@@ -35,6 +35,28 @@ func (m *mgo) FindOne(key string, value interface{}) *mongo.SingleResult {
 	return singleResult
 }
 
+//查询所有
+func (m *mgo) FindAll() (endPointList []models.EndPointBaseInfo) {
+	client := models.SetConnect()
+	collections, _ := client.Database(m.database).Collection(m.collection).Clone()
+	cur, err := collections.Find(context.Background(), bson.D{{}})
+	if err != nil {
+		log.Println(err)
+	}
+	defer cur.Close(context.Background())
+	for cur.Next(context.Background()) {
+		// To get the raw bson bytes use cursor.Current
+		row := models.EndPointBaseInfo{}
+		// do something with raw...
+		err = cur.Decode(&row)
+		if err != nil {
+			continue
+		}
+		endPointList = append(endPointList, row)
+	}
+	return
+}
+
 //插入单个
 func (m *mgo) InsertOne(value interface{}) (*mongo.InsertOneResult, error) {
 	client := models.SetConnect()

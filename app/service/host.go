@@ -5,7 +5,7 @@ import (
 	"github.com/docker/docker/api/types"
 )
 
-func AddHostToDB(info map[string]interface{}) (interface{}, error) {
+func AddEndPointToDB(info map[string]interface{}) (interface{}, error) {
 	mgo := mongo.NewMgo("docker_info", "endpoints")
 	insertResult, err := mgo.InsertOne(info)
 	if err != nil {
@@ -13,15 +13,19 @@ func AddHostToDB(info map[string]interface{}) (interface{}, error) {
 	}
 	return insertResult.InsertedID, nil
 }
-func DeleteHostFromDB(url string) {
+func DeleteEndPointFromDB(url string) {
 	mgo := mongo.NewMgo("docker_info", "endpoints")
-	mgo.FindOne("url", url)
+	mgo.FindOne("Url", url)
 }
-func UpdateHostFromDB(url string, info types.Info) {
+func UpdateEndPointFromDB(url string, info types.Info) {
 	mgo := mongo.NewMgo("docker_info", "endpoints")
-	mgo.FindOne("url", url)
+	mgo.FindOne("Url", url)
 }
-func FindHostFromDB(url string) {
+func FindEndPointFromDB(url string) interface{} {
 	mgo := mongo.NewMgo("docker_info", "endpoints")
-	mgo.FindOne("url", url)
+	return mgo.FindOne("Url", url)
+}
+func FindAllFromDB() interface{} {
+	mgo := mongo.NewMgo("docker_info", "endpoints")
+	return mgo.FindAll()
 }

@@ -16,10 +16,10 @@ func InitRouter() *gin.Engine {
 		// User API
 		apiV1.POST("/user/login", v1.Login)
 		apiV1.DELETE("/user/logout", v1.Logout)
-		// Host API
-		apiV1.POST("/host/addHost", v1.AddHost)
-		apiV1.DELETE("/host/deleteHost", v1.DeleteHost)
-		apiV1.PUT("/host/modifyHost", v1.ModifyHost)
+		// EndPoint API
+		apiV1.POST("/endPoint/addEndPoint", v1.AddEndPoint)
+		apiV1.DELETE("/endPoint/deleteEndPoint", v1.DeleteEndPoint)
+		apiV1.PUT("/endPoint/modifyEndPoint", v1.ModifyEndPoint)
 		// Docker API
 		apiV1.GET("/docker/info", v1.Info)
 		apiV1.GET("/docker/imageList", v1.ImageList)
