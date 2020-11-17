@@ -6,6 +6,7 @@ import (
 	"DockerUI/app/service"
 	"DockerUI/app/util"
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
 )
 
@@ -20,15 +21,12 @@ func AddEndPoint(c *gin.Context) {
 	group := c.PostForm("group")
 	cli, err := sdk.ConnInit(url)
 	if err != nil {
-		response.Code = http.StatusBadRequest
-		response.Message = "docker主机无法连接，请检查网络连接"
-		c.JSON(http.StatusOK, response)
-		return
+		log.Println(err)
 	}
 	info, err := sdk.Info(cli)
 	if err != nil {
 		response.Code = http.StatusBadRequest
-		response.Message = "docker主机信息获取失败"
+		response.Message = "docker主机无法连接，请检查网络连接"
 		c.JSON(http.StatusOK, response)
 		return
 	}
