@@ -20,11 +20,7 @@ func ConnInit(host string) (*client.Client, error) {
 	return cli, err
 }
 func Info(cli *client.Client) (types.Info, error) {
-	info, err := cli.Info(cxt)
-	if err != nil {
-		log.Println(err)
-	}
-	return info, err
+	return cli.Info(cxt)
 }
 func ImageList(cli *client.Client) ([]types.ImageSummary, error) {
 	images, err := cli.ImageList(cxt, types.ImageListOptions{})

@@ -3,7 +3,6 @@ package v1
 import (
 	"DockerUI/app/models"
 	"DockerUI/app/service"
-	"fmt"
 	"github.com/docker/docker/api/types"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -32,7 +31,6 @@ func Info(c *gin.Context) {
 				row := models.EndPointBaseInfo{}
 				_ = info.(*mongo.SingleResult).Decode(&row)
 				infoList = append(infoList, row)
-				fmt.Println(infoList)
 				wg.Done()
 				return
 			}
